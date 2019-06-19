@@ -1,148 +1,172 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
-	<meta charset="UTF-8">
-	<!-- Классика -->
-	<link rel="stylesheet" href="style/css/bootstrap.min.css">
-	<link rel="stylesheet" href="style/css/my.css">
-	<!-- Для классной карусели -->
-	<link rel="stylesheet" href="libs/Brazzers-Carousel-Repo-master/Brazzers-Carousel/jQuery.Brazzers-Carousel.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description"
+        content="Пример на bootstrap 4: Простой одностраничный шаблон для фотогалереи, портфолио и многого другого.">
 
-	<title>Document</title>
-	<style>
-		body {
-			height: 5000px;
-		}
-	</style>
+    <title>Портфолио</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/docs/4.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+
+    <!-- Custom styles for this template -->
+    <link href="album.css" rel="stylesheet">
+    <!-- Для классной карусели -->
+    <link rel="stylesheet" href="libs/Brazzers-Carousel-Repo-master/Brazzers-Carousel/jQuery.Brazzers-Carousel.min.css">
 </head>
 
 <body>
+    <header>
+        <div class="collapse bg-dark" id="navbarHeader">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 col-md-7 py-4">
+                        <h4 class="text-white">About</h4>
+                        <p class="text-muted">В данном портфоли собраны все мои проекты: вёрстка и сайты на PHP. Вы
+                            можете связаться со мной для обсуждения сотрудничества.</p>
+                    </div>
+                    <div class="col-sm-4 offset-md-1 py-4">
+                        <h4 class="text-white">Контакты</h4>
+                        <ul class="list-unstyled">
+                            <li><a href="https://vk.com/pechehka" class="text-white" target="_blank">ВКонтакте</a></li>
+                            <li><a href="https://github.com/100pecheneK" class="text-white" target="_blank">GitHub</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="navbar navbar-dark bg-dark shadow-sm">
+            <div class="container d-flex justify-content-between">
+                <a href="#" class="navbar-brand d-flex align-items-center">
 
-	<header>
-		<nav class="navbar navbar-expand navbar-light bg-light">
-				<a class="navbar-brand" href="#">Портфолио</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample02"
-				aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
+                    <strong>Портфолио</strong>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader"
+                    aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </div>
+    </header>
 
-			<div class="collapse navbar-collapse" id="navbarsExample02">
-				<ul class="navbar-nav mr-auto">
-					<li class="nav-item active">
-						<a class="nav-link" href="https://vk.com/pechehka">Написать мне</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="https://github.com/100pecheneK">GitHub<span class="sr-only">(current)</span></a>
-					</li>
-				</ul>
+    <main role="main">
 
-			</div>
-		</nav>		
-	</header>
+        <section class="jumbotron text-center mb-0">
+            <div class="container">
+                <h1 class="jumbotron-heading">Создание сайтов на PHP и вёрстка на Bootstrap 4</h1>
+                <p class="lead text-muted">В данном портфоли собраны все мои проекты: вёрстка и сайты на PHP</p>
+                <p>
+                    <a href="https://vk.com/pechehka" class="btn btn-primary my-2" target="_blank">ВКонтакте</a>
+                    <a href="https://github.com/100pecheneK" class="btn btn-secondary my-2" target="_blank">GitHub</a>
+                </p>
+            </div>
+        </section>
 
-	<main role="main" style="margin-top: 1rem">
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					<div class="jumbotron">
-						<div class="container">
-							<h1 class="jumbotron-heading">Создание сайтов на PHP</h1>
-							<p class="lead text-muted">Здесь собраны все мои проекты</p>
-							<p>
-								<a href="#" class="btn btn-primary my-2">Связаться со мной</a>
-								<a href="#" class="btn btn-secondary my-2">GitHub</a>
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-12 col-lg-6">
-						<div class="card mb-4 shadow-sm">
-							<div class="BC">
-								<div class="thumb-item">
-									<img class="img-prev" src="img/mysite/1.jpg" alt="Alt">
-									<img class="img-prev" src="img/mysite/2.jpg" alt="Alt">
-									<img class="img-prev" src="img/mysite/3.jpg" alt="Alt">
-									<img class="img-prev" src="img/mysite/4.jpg" alt="Alt">
-								</div>
-							</div>
-							<div class="card-body">
-								<p class="card-text">This is a wider card with supporting text below as a natural
-									lead-in to additional content. This content is a little bit longer.</p>
-								<div class="d-flex justify-content-between align-items-center">
-									<div class="btn-group">
-										<button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-										<button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-									</div>
-									<small class="text-muted">9 mins</small>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-xs-12 col-lg-6">
-						<div class="card mb-4 shadow-sm">
-							<div class="BC">
-								<img class="img-prev" src="img/mystackOverflow/1.jpg" alt="Alt">
-								<img class="img-prev" src="img/mystackOverflow/2.jpg" alt="Alt">
-								<img class="img-prev" src="img/mystackOverflow/3.jpg" alt="Alt">
-								<img class="img-prev" src="img/mystackOverflow/4.jpg" alt="Alt">
-							</div>
-							<div class="card-body">
-								<p class="card-text">This is a wider card with supporting text below as a natural
-									lead-in to additional content. This content is a little bit longer.</p>
-								<div class="d-flex justify-content-between align-items-center">
-									<div class="btn-group">
-										<button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-										<button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-									</div>
-									<small class="text-muted">9 mins</small>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</main>
+        <div class="album py-5 bg-light">
+            <div class="container">
 
-	<footer class="text-muted">
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					<p class="float-right">
-						<a href="#">Наверх</a>
-					</p>
-					<p>Это шаблон из Bootstrap 4</p>
-					<p>Я его отредактировал для демонстрации своих свёрстаных страниц и готовых сайтов. Со мной можно
-						связаться тут: <a href="https://vk.com/pechehka">Мой ВКонтакте</a>
-						<p></p>
-				</div>
-			</div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="BC">
+                                <img class="img-prev" src="img/mysite/1.jpg" alt="Alt">
+                                <img class="img-prev" src="img/mysite/2.jpg" alt="Alt">
+                                <img class="img-prev" src="img/mysite/3.jpg" alt="Alt">
+                                <img class="img-prev" src="img/mysite/4.jpg" alt="Alt">
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">Мой первый сайт. Интересный блог, где автором являются все
+                                    пользователи сайта. Каждый может зайти и поделиться своими мыслями.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                            <a href="#" class="btn btn-primary btn-sm active" role="button"
+                                            aria-pressed="true">Смотреть</a>
+                                        <a href="https://github.com/100pecheneK/phpProject/tree/master/OSPanel/domains/mysite" class="btn btn-secondary btn-sm active" role="button"
+                                            aria-pressed="true" target="_blank">GitHub</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="BC">
+                                <img class="img-prev" src="img/mystackOverflow/1.jpg" alt="Alt">
+                                <img class="img-prev" src="img/mystackOverflow/2.jpg" alt="Alt">
+                                <img class="img-prev" src="img/mystackOverflow/3.jpg" alt="Alt">
+                                <img class="img-prev" src="img/mystackOverflow/4.jpg" alt="Alt">
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">Данный сайт находится в разработке. Однако уже в нём есть
+                                    возможность создать аккаунт пользователя и воспользоваться настройками аккаунта.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">                                        
+                                        <a href="#" class="btn btn-primary btn-sm active" role="button"
+                                            aria-pressed="true">Смотреть</a>
+                                        <a href="https://github.com/100pecheneK/phpProject/tree/master/OSPanel/domains/mystackOverflow" class="btn btn-secondary btn-sm active" role="button"
+                                            aria-pressed="true" target="_blank">GitHub</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-		</div>
-	</footer>
+    </main>
+
+    <footer class="text-muted">
+        <div class="container">
+            <p class="float-right">
+                <a href="#">Наверх</a>
+            </p>
+            <p>Понравился проект? <a href="https://vk.com/pechehka" target="_blank">Вы можете связаться со мной</a> или
+                посмотреть <a href="https://github.com/100pecheneK" target="_blank">проекты на GitHub.</a>.</p>
+        </div>
+    </footer>
 
 
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-	</script>
-	<script>
-		window.jQuery || document.write('<script src="/docs/4.3.1/assets/js/vendor/jquery-slim.min.js"><\/script>')
-	</script>
-	<script src="/docs/4.3.1/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous">
-	</script>
-	<!-- Для классной карусели -->
-	<script type="text/javascript" charset="UTF-8" async="" src="http://share.pluso.ru/pluso-like.js"></script>
-	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-	<script src="libs/Brazzers-Carousel-Repo-master/Brazzers-Carousel/jQuery.Brazzers-Carousel.min.js"></script>
-	<script>
-		$(".BC").brazzersCarousel();
-	</script>
-
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+    <!-- Для классной карусели -->
+    <script type="text/javascript" charset="UTF-8" async="" src="http://share.pluso.ru/pluso-like.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="libs/Brazzers-Carousel-Repo-master/Brazzers-Carousel/jQuery.Brazzers-Carousel.min.js"></script>
+    <script>
+        $(".BC").brazzersCarousel();
+    </script>
 
 </body>
 
