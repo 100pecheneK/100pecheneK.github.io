@@ -8,15 +8,18 @@
     <!-- Bootstrap 4 -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="../style/css/bootstrap.css">
-    <link rel="stylesheet" href="../style/css/my.css">
-    <title>Document</title>
-
+    <title>Мой Stack Overflow</title>
+    
+    <style>
+        body {
+            height: 3000px;
+        }
+    </style>
 </head>
 
-<body>
+<body class="bg-light">
     <!-- Навбар -->
-    <nav class="navbar navbar-expand-xl navbar-light fixed-top bg-light">
+    <nav class="navbar navbar-expand-xl navbar-light sticky-top bg-light shadow-sm">
         <a class="navbar-brand" href="#">Мой Stack Overflow</a>
         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -25,14 +28,14 @@
         </button>
         <div class="navbar-collapse collapse" id="navbarSupportedContent" style="">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">О проекте <span class="sr-only">(current)</span></a>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#" role="button">Все вопросы</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Написать мне</a>
+                    <a class="nav-link" href="#" role="button">Метки</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Поддержка</a>
+                    <a class="nav-link" href="#" role="button">Пользователи</a>
                 </li>
             </ul>
             <form class="form-inline mt-2 mt-md-0">
@@ -44,81 +47,13 @@
             <a class="btn btn-primary" href="#" data-toggle="modal" data-target="#exampleModalSignUp">Регистрация</a>
         </div>
     </nav>
-    <!-- Конец навбара -->
-    <!-- Модальные окна -->
-    <!-- Модальное окно входа -->
-    <div class="modal fade" id="exampleModalLogIn" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-sm" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Войти</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="form-group">
-                            <label for="exampleInputEmail">Email</label>
-                            <input type="email" class="form-control" id="exampleInputEmail" placeholder="Ваш Email"
-                                required>
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputPass">Пароль</label>
-                            <input type="password" class="form-control" id="exampleInputPass" placeholder="Ваш пароль"
-                                required>
-                        </div>
-                        <div class="custom-control custom-checkbox mr-sm-2">
-                            <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
-                            <label class="custom-control-label" for="customControlAutosizing">Запомнить меня</label>
-                        </div>
-                        <button class="btn btn-primary btn-block mt-2" type="submit">Войти</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Модальное окно регистрации -->
-    <div class="modal fade" id="exampleModalSignUp" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-sm" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Регистрация</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="form-group">
-                            <label for="exampleInputEmail">Email</label>
-                            <input type="email" class="form-control" id="exampleInputEmail" placeholder="Ваш Email"
-                                required>
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInput">Имя</label>
-                            <input type="text" class="form-control" id="exampleInput" placeholder="Отображаемое имя"
-                                required>
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputPass">Пароль</label>
-                            <input type="password" class="form-control" id="exampleInputPass" placeholder="Ваш пароль"
-                                required>
-                        </div>
-                        <button class="btn btn-primary btn-block" type="submit">Регистрация</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- конец Модальное окно -->
-    <main role="main" class="container" style="margin-top: 7rem;">
+    <!-- /Навбар -->
+    <!-- Главный блок -->
+    <main role="main" class="container mt-4">
 
         <div class="shadow p-3 mb-5 bg-white rounded">
             <div class="coltainer">
-                <div class="row" style="margin-bottom: 15px;">
+                <div class="row">
                     <div class="col-xs-12 col-lg-10">
                         <h3>Исследуйте вопросы сообщества</h3>
                     </div>
@@ -127,159 +62,67 @@
                     </div>
                 </div>
             </div>
-            <div class="container" style="padding-left: 0px;padding-right: 0px;">
-                <div class="row justify-content-center">
-                    <div class="col-xs-12 col-md">
-                        <a class="btn btn-light btn-sm btn-block" href="#" role="button">Главная</a>
-                    </div>
-                    <div class="col-xs-12 col-md">
-                        <a class="btn btn-light btn-sm btn-block" href="#" role="button">Вопросы</a>
-                    </div>
-                    <div class="col-xs-12 col-md">
-                        <a class="btn btn-light btn-sm btn-block" href="#" role="button">Метки</a>
-                    </div>
-                    <div class="col-xs-12 col-md">
-                        <a class="btn btn-light btn-sm btn-block" href="#" role="button">Участники</a>
-                    </div>
-                </div>
-            </div>
         </div>
-
-
         <div class="shadow p-3 mb-5 bg-white rounded">
-            <h6 class="border-bottom border-gray pb-2 mb-0">Вопросы</h6>
+            <h6 class="border-bottom border-gray pb-2 mb-0">Новые вопросы</h6>
             <!-- Блок вопроса -->
             <div class="media text-muted pt-3">
                 <div class="media-body pb-3 mb-0 lh-125 border-bottom border-gray">
                     <div class="container">
                         <div class="row">
-                            <div class="col-xs-12 col-md-3">
+                            <div class="col-md-12 col-lg-3">
                                 <div class="row">
-                                    <div class="col-4"><a class="btn btn-light btn-sm btn-block" href="#" role="button">
+                                    <div class="col-4 p-1"><a class="btn btn-light btn-sm btn-block" href="#"
+                                            role="button">
                                             <span class="badge badge-light">4</span>голоса</a>
                                     </div>
-                                    <div class="col-4"><a class="btn btn-light btn-sm btn-block" href="#" role="button">
+                                    <div class="col-4 p-1"><a class="btn btn-light btn-sm btn-block" href="#"
+                                            role="button">
                                             <span class="badge badge-light">4</span>ответа</a></div>
-                                    <div class="col-4"><a class="btn btn-light btn-sm btn-block" href="#" role="button">
+                                    <div class="col-4 p-1"><a class="btn btn-light btn-sm btn-block" href="#"
+                                            role="button">
                                             <span class="badge badge-light">4</span>показа</a></div>
                                 </div>
-
                             </div>
-                            <div class="col-xs-12 col-md-9">
+                            <div class="col-md-12 col-lg-9">
                                 <div class="row">
-                                    <div class="col">
+                                    <div class="col-12">
                                         <a href="#">
-                                            <h3>Что такое картошка? Как её варить? Что делать если картошка упала?</h3>
+                                            <!-- Превью текста не больше 250 символов(указывать в создании вопроса) -->
+                                            <h3 class="text-break">Что такое картошка? Как её варить? Что делать если
+                                                картошка упалаЧто такое картошка? Как её варить? Что делать если
+                                                картошка упала?123фывыа фвыа ыфа ф?</h3>
                                         </a>
                                     </div>
                                     <div class="w-100"></div>
-                                    <div class="col text-left">
+                                    <div class="col-md-12 col-lg-6 text-left">
+                                        <!-- Максимум 6 -->
                                         <a class="badge badge-pill badge-light" href="#" role="button">Овощи</a>
-                                        <a class="badge badge-pill badge-light" href="#" role="button">Картошка</a>
-                                        <a class="badge badge-pill badge-light" href="#" role="button">Падение</a>
-                                        <a class="badge badge-pill badge-light" href="#" role="button">Варка</a>
+                                        <a class="badge badge-pill badge-light" href="#" role="button">Овощи</a>
+                                        <a class="badge badge-pill badge-light" href="#" role="button">Овощи</a>
+                                        <a class="badge badge-pill badge-light" href="#" role="button">Овощи</a>
+                                        <a class="badge badge-pill badge-light" href="#" role="button">Овощи</a>
+                                        <a class="badge badge-pill badge-light" href="#" role="button">Овощи</a>
                                     </div>
-                                    <div class="col text-right">
+                                    <div class="col-md-12 col-lg-6 text-right">
                                         <a href="#" title="08-06-19 16:29"><span>изменён 6 минут назад</span></a>
                                         <a href="#"><span>Миша</span></a>
                                         <span class="text-muted" title="уровень репутации">200к</span>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <!-- Конец блока вопроса -->
-            <!-- Бутофор -->
-            <div class="media text-muted pt-3">
-                <div class="media-body pb-3 mb-0 lh-125 border-bottom border-gray">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-xs-12 col-md-3">
-                                <div class="row">
-                                    <div class="col-4"><a class="btn btn-light btn-sm btn-block" href="#" role="button">
-                                            <span class="badge badge-light">164</span>голоса</a>
-                                    </div>
-                                    <div class="col-4"><a class="btn btn-light btn-sm btn-block" href="#" role="button">
-                                            <span class="badge badge-light">0</span>ответа</a></div>
-                                    <div class="col-4"><a class="btn btn-light btn-sm btn-block" href="#" role="button">
-                                            <span class="badge badge-light">200</span>показа</a></div>
-                                </div>
-                            </div>
-                            <div class="col-xs-12 col-md-9">
-                                <div class="row">
-                                    <div class="col">
-                                        <a href="#">
-                                            <h3>У меня есть вопрос и он требует срочного ответа</h3>
-                                        </a>
-                                    </div>
-                                    <div class="w-100"></div>
-                                    <div class="col text-left">
-                                        <a class="badge badge-pill badge-light" href="#" role="button">Овощи</a>
-                                        <a class="badge badge-pill badge-light" href="#" role="button">Картошка</a>
-                                        <a class="badge badge-pill badge-light" href="#" role="button">Падение</a>
-                                        <a class="badge badge-pill badge-light" href="#" role="button">Варка</a>
-                                    </div>
-                                    <div class="col text-right">
-                                        <a href="#" title="08-06-19 16:29"><span>задан 3 минуты назад</span></a>
-                                        <a href="#"><span>Миша</span></a>
-                                        <span class="text-muted" title="уровень репутации">200к</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="media text-muted pt-3">
-                <div class="media-body pb-3 mb-0 lh-125 border-bottom border-gray">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-xs-12 col-md-3">
-                                <div class="row">
-                                    <div class="col-4"><a class="btn btn-light btn-sm btn-block" href="#" role="button">
-                                            <span class="badge badge-light">-5</span>голосов</a>
-                                    </div>
-                                    <div class="col-4"><a class="btn btn-light btn-sm btn-block" href="#" role="button">
-                                            <span class="badge badge-light">70</span>ответов</a></div>
-                                    <div class="col-4"><a class="btn btn-light btn-sm btn-block" href="#" role="button">
-                                            <span class="badge badge-light">45</span>показов</a></div>
-                                </div>
 
-                            </div>
-                            <div class="col-xs-12 col-md-9">
-                                <div class="row">
-                                    <div class="col">
-                                        <a href="#">
-                                            <h3>У меня не работает стульчак</h3>
-                                        </a>
-                                    </div>
-                                    <div class="w-100"></div>
-                                    <div class="col text-left">
-                                        <a class="badge badge-pill badge-light" href="#" role="button">Туалет</a>
-                                        <a class="badge badge-pill badge-light" href="#" role="button">Стальчак</a>
-                                        <a class="badge badge-pill badge-light" href="#" role="button">Какахи</a>
-                                    </div>
-                                    <div class="col text-right">
-                                        <a href="#" title="08-06-19 16:29"><span>ответ дан 6 минут назад</span></a>
-                                        <a href="#"><span>M94IK</span></a>
-                                        <span class="text-muted" title="уровень репутации">12</span>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Конец бутофор -->
             <small class="d-block text-right mt-3">
                 <a class="btn btn-primary" href="#" role="button">Больше вопросов</a>
             </small>
     </main>
-
+    <!-- /Главный бло -->
+    <!-- Футер -->
     <footer class="text-muted">
         <div class="container">
             <div class="row">
@@ -319,10 +162,8 @@
             </div>
         </div>
     </footer>
+    <!-- /Футер -->
 
-
-    <!-- Конец футера -->
-    <a name="te"></a>
     <!-- Bootstrap 4 -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
@@ -333,5 +174,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
-    <script src="../style/js/bootstrap.js"></script>
-    < /body> < /html>
+</body>
+
+</html>
