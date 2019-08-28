@@ -1,0 +1,75 @@
+$color_bg: #000000
+$color_bg-row: rgba(112, 112, 112, 0.4)  
+$color_sidebar: #018E84 
+$color_h1: #D4D4D4
+$color_h2: #ABABAB
+$color_description: #8F8F8F
+$color_description-2: #8F8F8F
+$color_code: #707070
+
+
+body
+    margin: 0
+    padding: 0
+    font-family: Consolas
+    background-color: $color_bg
+
+
+h1
+    color: $color_h1
+    margin: 0 0 0.5em
+    font-size: 2em
+h2
+    color: $color_h2
+    margin: 0 0 0.5em
+    font-size: 1.5em
+    font-weight: normal
+
+p
+    margin: 0
+
+.container
+    margin-top: 2em
+.row
+    padding: 10px
+
+.col-12
+    p:last-child
+        margin-bottom: 20px
+.col-8
+    
+.sidebar
+    position: sticky
+    top: 1em
+    height: 100%
+    padding: 20px
+    background-color: $color_sidebar
+    h1, h2 
+        margin: 0
+    
+    a
+        text-decoration: none
+        color: $color_h1
+        transition: 0.5s
+    a:hover
+        color: #000
+        transition: 0s
+
+.description
+    color: $color_description
+
+.description-2
+    color: $color_description-2
+
+.code
+    color: $color_code
+    margin-top: 0.2em
+    font-size: 1.1em
+
+.sub
+    margin-left: 2em !important
+
+.chapter
+    background-color: $color_bg-row
+    margin-bottom: 2em
+    width: 100%

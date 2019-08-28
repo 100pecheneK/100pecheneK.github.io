@@ -1,27 +1,3 @@
-<!-- DELL Inspiron 3552 
-https://www.citilink.ru/catalog/mobile/notebooks/1067868/?mrkt=orn_cl&gclid=CjwKCAjw1f_pBRAEEiwApp0JKPKQZj2sKI_xCIP3uZQE2coOipZADl4vL1Kug3mXmzsErc8bVInEEhoCc-kQAvD_BwE
-https://www.youtube.com/watch?v=HUHcLLmv45I
--------------
-Lenovo IdeaPad 100 15 
-https://www.youtube.com/watch?v=DSuH4cl8qLQ
--------------
-HP 15-rb012ur
-https://www.citilink.ru/catalog/mobile/notebooks/1027728/
--------------
-HP 17-by0047ur
-https://www.citilink.ru/catalog/mobile/notebooks/1143605/?mrkt=tmn_cl&gclid=CjwKCAjw1f_pBRAEEiwApp0JKHf8acUKbnXrLot8bUU4buaTEi_K1sV8v9eN3RD3svwlu52_gR3TUhoCT68QAvD_BwE
--------------
-hp 14-ck0003ur
-https://www.citilink.ru/catalog/mobile/notebooks/1072674/?mrkt=tmn_cl&gclid=CjwKCAjw1f_pBRAEEiwApp0JKPS3upijClMfNjxFcp2HLt4Tyt3tp_ux3QUiQX_Hf_FUDiKXR7hjohoCJQcQAvD_BwE
-----------------
-LENOVO IdeaPad 330-15IGM 
-https://www.ozon.ru/context/detail/id/148322307/?gclid=CjwKCAjw1f_pBRAEEiwApp0JKHDlfITgdjovWxBp6znc8Oh1mbFBkohJGDpvar1Tuzrx9hzbfGxjkxoCdRcQAvD_BwE&gclsrc=aw.ds
--------------
-Acer Swift 1
-https://www.eldorado.ru/cat/detail/71379556/?location=Belgorodskaya_oblast__Stariy_Oskol&gclid=CjwKCAjw1f_pBRAEEiwApp0JKLaE3B3g9u5fHKNcsVYMK4Bk_fsvNzsuiDm9BFv1QqS4OP-QWEQj1xoC3N0QAvD_BwE
-------------
-Acer Aspire 3 A315-33-C9B2
-https://www.dns-shop.ru/product/13486ac6ed341b80/156-noutbuk-acer-aspire-3-a315-33-c9b2-cernyj/ -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,118 +5,180 @@ https://www.dns-shop.ru/product/13486ac6ed341b80/156-noutbuk-acer-aspire-3-a315-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Nastya</title>
+    <title>Django helper</title>
 
-    <link href="/docs/4.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <style>
-        .card{
-            margin-top: 1rem;
-        }
-    </style>
+    <link rel="stylesheet" href="css/bootstrap-grid.css">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="card shadow">
-                    <img class="img-fluid" src="image/Noutbuk-DELL-Inspiron-3542.jpg" alt="">
-                    <div class="card-body">
-                        <h4>DELL Inspiron 3552 </h4>
-                        <a  class="btn btn-success"
-                            href="https://www.citilink.ru/catalog/mobile/notebooks/1067868/?mrkt=orn_cl&gclid=CjwKCAjw1f_pBRAEEiwApp0JKPKQZj2sKI_xCIP3uZQE2coOipZADl4vL1Kug3mXmzsErc8bVInEEhoCc-kQAvD_BwE">Купить</a>
-                        <a href="https://www.youtube.com/watch?v=HUHcLLmv45I">Видео</a>
+
+    <div class="main">
+        <div class="container">
+            <div class="row">
+                <div class="col-8 content">
+                    <div class="row chapter">
+                        <div class="col-12" id="start">
+                            <h1>START</h1>
+                        </div>
+                        <div class="col-12">
+                            <p class="description">Создание проекта</p>
+                            <p class="code">django-admin startproject __projectName__</p>
+                        </div>
+                    </div>
+                    <div class="row chapter">
+                        <div class="col-12" id="ss">
+                            <h1>SERVER START</h1>
+                        </div>
+                        <div class="col-12">
+                            <p class="description">Запустить сервер на localhost:8000</p>
+                            <p class="code">python manage.py runserver</p>
+                        </div>
+                        <div class="col-12">
+                            <p class="description">Запустить сервер на внешмем IP</p>
+                            <p class="code">python manage.py runserver 192.168.0.104</p>
+                        </div>
+                        <div class="col-12">
+                            <p class="description">Запустить сервер на внешнем PORT</p>
+                            <p class="code">python manage.py runserver 80</p>
+                        </div>
+                    </div>
+                    <div class="row chapter">
+                        <div class="col-12" id="md">
+                            <h1 class="">MIGRATION & DB</h1>
+                        </div>
+                        <div class="col-12">
+                            <p class="description">Создать миграцию (в каталоге с файлом manage.py)</p>
+                            <p class="code">python manage.py makemigrations __appName__</p>
+                        </div>
+                        <div class="col-12">
+                            <p class="description">Посмотреть SQL команды миграции</p>
+                            <p class="code">python manage.py sqlmigrate __appName__ __migrationNumber__</p>
+                        </div>
+                        <div class="col-12">
+                            <p class="description">Применить миграцию</p>
+                            <p class="code">python manage.py migrate</p>
+                        </div>
+                    </div>
+                    <div class="row chapter">
+                        <div class="col-12" id="shell">
+                            <h1>SHELL</h1>
+                        </div>
+                        <div class="col-12" id="tz">
+                            <h2>Timezone</h2>
+                            <p class="code">>>> from django.utils import timezone</p>
+                        </div>
+                        <div class="col-12 sub">
+                            <p class="description">Текущий год</p>
+                            <p class="code">>>> timezone.now().year</p>
+                        </div>
+                        <div class="col-12" id="i">
+                            <h2>IMPORT</h2>
+                        </div>
+                        <div class="col-12">
+                            <p class="description">Импорт моделей приложения</p>
+                            <p class="code">>>> from __appName__.models import __modelName__</p>
+                        </div>
+                        <div class="col-12">
+                            <p class="description">Импорт всех записей из модели</p>
+                            <p class="code">>>> __modelname__.objects.all()</p>
+                        </div>
+                        <div class="col-12">
+                            <p class="description">Импорт одной записи из модели</p>
+                            <p class="code">>>> __modelname__.objects.get(id = __number__)</p>
+                        </div>
+                        <div class="col-12">
+                            <p class="description">Импорт всех записей по фильтру из модели</p>
+                            <p class="code">>>> __modelname__.objects.filter(__filter__)</p>
+                        </div>
+                        <div class="col-12 sub">
+                            <p class="description-2">примеры фильтров</p>
+                            <p class="code">>>> __modelname__.objects.filter(textField__startswith = "t")</p>
+                            <p class="code">>>> __modelname__.objects.filter(dateTime__year = time)</p>
+                        </div>
+                        <div class="col-12">
+                            <p class="description">Импорт зависемых от Записи записей через внешний ключ ForeignKey</p>
+                            <p class="code">>>> var.subModelName_set.all()</p>
+                        </div>
+                        <div class="col-12">
+                            <p class="description">Импорт всех зависемых записей по фильтру из модели</p>
+                            <p class="code">>>> var.subModelName_set.filter(__filter__)</p>
+                        </div>
+                        <div class="col-12" id="c">
+                            <h2>CREATE</h2>
+                        </div>
+                        <div class="col-12">
+                            <p class="description">создание зависимой от Записи записи</p>
+                            <p class="code">>>> var.subModelName_set.create(__fieldName__ = "text")</p>
+                        </div>
+                        <div class="col-12">
+                            <p class="description">посчитать количество записей</p>
+                            <p class="code">>>> var.subModelName_set.count()</p>
+                        </div>
+                        <div class="col-12">
+                            <p class="description">создание записи</p>
+                            <p class="code">>>> var = __modelname__(__fieldName__ = "text")</p>
+                            <p class="code">>>> var.save()</p>
+                        </div>
+                        <div class="col-12" id="u">
+                            <h2>UPDATE</h2>
+                        </div>
+                        <div class="col-12">
+                            <p class="description">Изменить запись</p>
+                            <p class="code">>>> var.textField = "newText"</p>
+                            <p class="code">>>> var.save()</p>
+                        </div>
+                        <div class="col-12" id="d">
+                            <h2>DELETE</h2>
+                        </div>
+                        <div class="col-12">
+                            <p class="description">Удалить запись</p>
+                            <p class="code">>>> var.delete()</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-12">
-                <div class="card shadow">
-                    <img class="img-fluid" src="image/Lenovo-IdeaPad-100-15.png" alt="">
-                    <div class="card-body">
-                        <h4>Lenovo IdeaPad 100 15 </h4>
-                        <a href="https://www.youtube.com/watch?v=DSuH4cl8qLQ">Видео</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12">
-                <div class="card shadow">
-                    <img class="img-fluid" src="image/01.jpg" alt="">
-                    <div class="card-body">
-                        <h4>HP 15-rb012ur</h4>
-                        <a class="btn btn-success" href="https://www.citilink.ru/catalog/mobile/notebooks/1027728/">Купить</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12">
-                <div class="card shadow">
-                    <img class="img-fluid" src="image/02.jpg" alt="">
-                    <div class="card-body">
-                        <h4>HP 17-by0047ur</h4>
-                        <a
-                        class="btn btn-success" href="https://www.citilink.ru/catalog/mobile/notebooks/1143605/?mrkt=tmn_cl&gclid=CjwKCAjw1f_pBRAEEiwApp0JKHf8acUKbnXrLot8bUU4buaTEi_K1sV8v9eN3RD3svwlu52_gR3TUhoCT68QAvD_BwE">Купить</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12">
-                <div class="card shadow">
-                    <img class="img-fluid" src="image/03.jpg" alt="">
-                    <div class="card-body">
-                        <h4>HP 14-ck0003ur</h4>
-                        <a
-                        class="btn btn-success" href="https://www.citilink.ru/catalog/mobile/notebooks/1072674/?mrkt=tmn_cl&gclid=CjwKCAjw1f_pBRAEEiwApp0JKPS3upijClMfNjxFcp2HLt4Tyt3tp_ux3QUiQX_Hf_FUDiKXR7hjohoCJQcQAvD_BwE">Купить</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12">
-                <div class="card shadow">
-                    <img class="img-fluid" src="image/04.jpg" alt="">
-                    <div class="card-body">
-                        <h4>LENOVO IdeaPad 330-15IGM </h4>
-                        <a
-                        class="btn btn-success" href="https://www.ozon.ru/context/detail/id/148322307/?gclid=CjwKCAjw1f_pBRAEEiwApp0JKHDlfITgdjovWxBp6znc8Oh1mbFBkohJGDpvar1Tuzrx9hzbfGxjkxoCdRcQAvD_BwE&gclsrc=aw.ds">Купить</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12">
-                <div class="card shadow">
-                    <img class="img-fluid" src="image/05.jpg" alt="">
-                    <div class="card-body">
-                        <h4>Acer Swift 1</h4>
-                        <a
-                        class="btn btn-success" href="https://www.eldorado.ru/cat/detail/71379556/?location=Belgorodskaya_oblast__Stariy_Oskol&gclid=CjwKCAjw1f_pBRAEEiwApp0JKLaE3B3g9u5fHKNcsVYMK4Bk_fsvNzsuiDm9BFv1QqS4OP-QWEQj1xoC3N0QAvD_BwE">Купить</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12">
-                <div class="card shadow">
-                    <img class="img-fluid" src="image/06.jpg" alt="">
-                    <div class="card-body">
-                        <h4>Acer Aspire 3 A315-33-C9B2</h4>
-                        <a
-                        class="btn btn-success" href="https://www.dns-shop.ru/product/13486ac6ed341b80/156-noutbuk-acer-aspire-3-a315-33-c9b2-cernyj/ -->">Купить</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12">
-                <h1 class="text-center">Бонус</h1>
-            </div>
-            <div class="col-12">
-                <div class="card shadow">
-                    <img class="img-fluid" src="image/1.jpg" alt="">
-                    <img class="img-fluid" src="image/11.jpg" alt="">
-                </div>
-            </div>
-            <div class="col-12">
-                <div class="card shadow">
-                    <img class="img-fluid" src="image/2.jpg" alt="">
-                    <img class="img-fluid" src="image/22.jpg" alt="">
+                <div class="col-4 sidebar">
+                    <h1><a href="#start">START</a></h1>
+                    <h1><a href="#ss">SERVER START</a></h1>
+                    <h1><a href="#md">MIGRATION & DB</a></h1>
+                    <h1><a href="#shell">SHELL</a></h1>
+                    <h2 class="sub"><a href="#tz">TIMEZONE</a></h2>
+                    <h2 class="sub"><a href="#i">IMPORT</a></h2>
+                    <h2 class="sub"><a href="#c">CREATE</a></h2>
+                    <h2 class="sub"><a href="#u">UPDATE</a></h2>
+                    <h2 class="sub"><a href="#d">DELETE</a></h2>
                 </div>
             </div>
         </div>
     </div>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/jquery.smooth-scroll.js"></script>
+    <script>
+        $(function () {
+            $('a[href^="#"]').on('click', function (event) {
+                // отменяем стандартное действие
+                event.preventDefault();
+
+                var sc = $(this).attr("href"),
+                    dn = $(sc).offset().top;
+                /*
+                 * sc - в переменную заносим информацию о том, к какому блоку надо перейти
+                 * dn - определяем положение блока на странице
+                 */
+
+                $('html, body').animate({
+                    scrollTop: dn
+                }, 500);
+
+                /*
+                 * 1000 скорость перехода в миллисекундах
+                 */
+            });
+        });
+    </script>
+   
+
 </body>
 
 </html>

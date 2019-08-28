@@ -1,0 +1,78 @@
+-----------start------------
+
+django-admin startproject __projectName__
+
+---------------------------------------
+------------запуск сервера-------------
+---------------------------------------
+
+запустить сервер на localhost:8000
+python manage.py runserver
+
+Запустить сервер на внешмем IP
+python manage.py runserver 192.168.0.104
+
+Запустить сервер на внешнем PORT
+python manage.py runserver 80
+
+---------------------------------------
+--------миграции и работа с БД---------
+---------------------------------------
+
+создать миграцию (в каталоге с файлом manage.py)
+python manage.py makemigrations __appName__
+
+посмотреть SQL команды миграции
+python manage.py sqlmigrate __appName__ __migrationNumber__
+
+применить миграцию
+python manage.py migrate
+
+запустить shell для управление БД через ОРМ
+python manage.py shlell
+
+	модуль для работы с временными зонами
+	>>> from django.utils import timezone
+
+		текущий год
+		>>> timezone.now().year
+	
+	импорт моделей приложения
+	>>> from __appName__.models import __modelName__
+	
+		импорт всех записей из модели
+		>>> __modelname__.objects.all()
+		
+		импорт одной записи из модели
+		>>> __modelname__.objects.get(id = __number__)
+
+		импорт всех записей по фильтру из модели
+		>>> __modelname__.objects.filter(__filter__)
+			примеры фильтров
+			>>> __modelname__.objects.filter(textField__startswith = "t")
+			>>> __modelname__.objects.filter(dateTime__year = time)
+		
+		импорт зависемых от Записи записей через внешний ключ ForeignKey
+		>>> var.subModelName_set.all()
+
+			импорт всех зависемых записей по фильтру из модели
+			>>> var.subModelName_set.filter(__filter__)
+
+			создание зависимой от Записи записи
+			>>> var.subModelName_set.create(__fieldName__ = "text")
+			
+			посчитать количество записей
+			>>> var.subModelName_set.count()
+
+
+
+		создание записи
+		>>> var = __modelname__(__fieldName__ = "text", pub_date = 	timezpne.now())
+		>>> var.save()
+		
+		изменить запись
+		>>> var.textField = "newText"
+		>>> var.save()
+
+		удалить запись
+		>>> var.delete()

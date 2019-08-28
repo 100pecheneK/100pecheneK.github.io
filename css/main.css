@@ -1,0 +1,68 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Consolas;
+  background-color: #000000; }
+
+h1 {
+  color: #D4D4D4;
+  margin: 0 0 0.5em;
+  font-size: 2em; }
+
+h2 {
+  color: #ABABAB;
+  margin: 0 0 0.5em;
+  font-size: 1.5em;
+  font-weight: normal; }
+
+p {
+  margin: 0; }
+
+.container {
+  margin-top: 2em; }
+
+.row {
+  padding: 10px; }
+
+.col-12 p:last-child {
+  margin-bottom: 20px; }
+
+.sidebar {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 1em;
+  height: 100%;
+  padding: 20px;
+  background-color: #018E84; }
+  .sidebar h1, .sidebar h2 {
+    margin: 0; }
+  .sidebar a {
+    text-decoration: none;
+    color: #D4D4D4;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s; }
+  .sidebar a:hover {
+    color: #000;
+    -webkit-transition: 0s;
+    -o-transition: 0s;
+    transition: 0s; }
+
+.description {
+  color: #8F8F8F; }
+
+.description-2 {
+  color: #8F8F8F; }
+
+.code {
+  color: #707070;
+  margin-top: 0.2em;
+  font-size: 1.1em; }
+
+.sub {
+  margin-left: 2em !important; }
+
+.chapter {
+  background-color: rgba(112, 112, 112, 0.4);
+  margin-bottom: 2em;
+  width: 100%; }
