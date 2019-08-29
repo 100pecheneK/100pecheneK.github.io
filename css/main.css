@@ -97,6 +97,9 @@ nav {
       .container-fluid .container .row:not(.chapter) {
         margin: 0;
         padding: 0; }
+      .container-fluid .container .chapter {
+        margin-right: 0;
+        margin-left: 0; }
       .container-fluid .container .col {
         margin: 0;
         padding: 0; } }
