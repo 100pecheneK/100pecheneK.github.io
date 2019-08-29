@@ -94,12 +94,11 @@ nav {
     .container-fluid .container {
       padding: 0;
       margin: 0; }
-      .container-fluid .container .row:not(.chapter) {
+      .container-fluid .container .row {
         margin: 0;
         padding: 0; }
       .container-fluid .container .chapter {
-        margin-right: 0;
-        margin-left: 0; }
+        margin-bottom: 1em; }
       .container-fluid .container .col {
         margin: 0;
         padding: 0; } }
