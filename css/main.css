@@ -16,7 +16,9 @@ h2 {
   font-weight: normal; }
 
 p {
-  margin: 0; }
+  margin: 0;
+  word-break: break-word !important;
+  overflow-wrap: break-word !important; }
 
 ul, li {
   margin: 0;
@@ -60,8 +62,7 @@ span {
 
 .chapter {
   background-color: rgba(112, 112, 112, 0.4);
-  margin-bottom: 2em;
-  width: 100%; }
+  margin-bottom: 2em; }
 
 .active h1, .active h2 {
   color: #018E84; }
@@ -88,12 +89,13 @@ nav {
   .sub-menu a {
     padding-left: 2em; }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 1000px) {
   .container-fluid {
     padding: 0; }
     .container-fluid .container {
       padding: 0;
-      margin: 0; }
+      margin: 0;
+      max-width: 100%; }
       .container-fluid .container .row {
         margin: 0;
         padding: 0; }

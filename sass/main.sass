@@ -28,6 +28,8 @@ h2
     
 p
     margin: 0
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
 ul, li 
     margin: 0
     padding: 0
@@ -70,7 +72,7 @@ span
 .chapter
     background-color: $color_bg-row
     margin-bottom: 2em
-    width: 100%
+    
 
 .active
     h1, h2 
@@ -106,12 +108,13 @@ nav
     a
         padding-left: 2em
 
-@media screen and ( max-width: 500px )
+@media screen and ( max-width: 1000px )
     .container-fluid
         padding: 0
         .container
             padding: 0
             margin: 0
+            max-width: 100%
             .row
                 margin: 0
                 padding: 0
