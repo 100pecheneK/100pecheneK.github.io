@@ -1,6 +1,7 @@
 $color_bg: #000000
 $color_bg-row: rgba(112, 112, 112, 0.4)  
 $color_sidebar: #018E84 
+$color_sidebar-hover: #003c37 
 $color_h1: #D4D4D4
 $color_h2: #ABABAB
 $color_description: #8F8F8F
@@ -24,36 +25,39 @@ h2
     margin: 0 0 0.5em
     font-size: 1.5em
     font-weight: normal
-
+    
 p
     margin: 0
-
+ul, li 
+    margin: 0
+    padding: 0
+    list-style: none
 .container
     margin-top: 2em
+
 .row
     padding: 10px
 
 .col-12
     p:last-child
-        margin-bottom: 20px
-.col-8
-    
-.sidebar
-    position: sticky
-    top: 1em
-    height: 100%
-    padding: 20px
-    background-color: $color_sidebar
-    h1, h2 
-        margin: 0
-    
-    a
-        text-decoration: none
-        color: $color_h1
-        transition: 0.5s
-    a:hover
-        color: #000
-        transition: 0s
+        margin-bottom: 20px   
+            
+.logo
+    transition: 0.5s
+    margin: 0
+.logo:hover        
+    color: $color_h1 !important
+.big
+    display: inline
+.small
+    display: none
+@media screen and ( max-width: 500px )
+    .big
+        display: none
+    .small
+        font-size: 2em
+        display: inline
+
 
 .description
     color: $color_description
@@ -73,3 +77,37 @@ p
     background-color: $color_bg-row
     margin-bottom: 2em
     width: 100%
+
+.active
+    h1, h2 
+        color: $color_sidebar
+
+
+// sidebar
+#sidebar-wrapper
+    background-color: $color_sidebar
+
+    a
+        background-color: $color_sidebar
+        color: $color_h1
+    a:hover
+        background-color: $color_sidebar-hover 
+    // sub
+    //     margin-left: 20px
+
+
+// nav
+nav 
+    background-color: $color_sidebar
+    height: 40px !important
+    nav-link 
+        color: $color_h1 !important
+
+#menu-toggle
+    margin-right: 1em
+    cursor: pointer
+
+.sub-menu
+    display: none
+    a
+        padding-left: 2em
