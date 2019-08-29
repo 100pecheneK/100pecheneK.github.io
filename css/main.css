@@ -41,19 +41,6 @@ ul, li {
 .logo:hover {
   color: #D4D4D4 !important; }
 
-.big {
-  display: inline; }
-
-.small {
-  display: none; }
-
-@media screen and (max-width: 500px) {
-  .big {
-    display: none; }
-  .small {
-    font-size: 2em;
-    display: inline; } }
-
 .description {
   color: #8F8F8F; }
 
