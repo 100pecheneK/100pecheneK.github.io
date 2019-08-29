@@ -32,6 +32,9 @@ ul, li
     margin: 0
     padding: 0
     list-style: none
+
+span
+    color: $color_h2
 .container
     margin-top: 2em
 
@@ -62,7 +65,7 @@ ul, li
     font-size: 1.1em
 
 .sub
-    margin-left: 2em !important
+    width: 100%
 
 .chapter
     background-color: $color_bg-row
@@ -102,3 +105,18 @@ nav
     display: none
     a
         padding-left: 2em
+
+@media screen and ( max-width: 500px )
+    .container-fluid
+        padding: 0
+        .container
+            padding: 0
+            margin: 0
+            .row:not(.chapter)
+                margin: 0
+                padding: 0
+            .col
+                margin: 0
+                padding: 0
+
+    

@@ -23,6 +23,9 @@ ul, li {
   padding: 0;
   list-style: none; }
 
+span {
+  color: #ABABAB; }
+
 .container {
   margin-top: 2em; }
 
@@ -53,7 +56,7 @@ ul, li {
   font-size: 1.1em; }
 
 .sub {
-  margin-left: 2em !important; }
+  width: 100%; }
 
 .chapter {
   background-color: rgba(112, 112, 112, 0.4);
@@ -85,3 +88,16 @@ nav {
   display: none; }
   .sub-menu a {
     padding-left: 2em; }
+
+@media screen and (max-width: 500px) {
+  .container-fluid {
+    padding: 0; }
+    .container-fluid .container {
+      padding: 0;
+      margin: 0; }
+      .container-fluid .container .row:not(.chapter) {
+        margin: 0;
+        padding: 0; }
+      .container-fluid .container .col {
+        margin: 0;
+        padding: 0; } }

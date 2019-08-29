@@ -70,7 +70,7 @@
                     </ul>
                 </div>
             </nav>
-            <div class="container-fluid">
+            <div class="container-fluid ">
                 <div class="container">
                     <div class="row">
                         <div class="col content">
@@ -80,11 +80,11 @@
                                 </div>
                                 <div class="col-12">
                                     <p class="description">Создание проекта</p>
-                                    <p class="code">django-admin startproject __projectName__</p>
+                                    <p class="code">django-admin startproject <span>projectName</span></p>
                                 </div>
                                 <div class="col-12">
                                     <p class="description">Создание приложения</p>
-                                    <p class="code">python manage.py startapp __appName__</p>
+                                    <p class="code">python manage.py startapp <span>appName</span></p>
                                 </div>
                             </div>
                             <div class="row chapter">
@@ -110,11 +110,11 @@
                                 </div>
                                 <div class="col-12">
                                     <p class="description">Создать миграцию (в каталоге с файлом manage.py)</p>
-                                    <p class="code">python manage.py makemigrations __appName__</p>
+                                    <p class="code">python manage.py makemigrations <span>appName</span></p>
                                 </div>
                                 <div class="col-12">
                                     <p class="description">Посмотреть SQL команды миграции</p>
-                                    <p class="code">python manage.py sqlmigrate __appName__ __migrationNumber__</p>
+                                    <p class="code">python manage.py sqlmigrate <span>appName migrationNumber</span></p>
                                 </div>
                                 <div class="col-12">
                                     <p class="description">Применить миграцию</p>
@@ -138,24 +138,24 @@
                                 </div>
                                 <div class="col-12">
                                     <p class="description">Импорт моделей приложения</p>
-                                    <p class="code">>>> from __appName__.models import __modelName__</p>
+                                    <p class="code">>>> from <span>appName</span>.models import <span>modelName</span></p>
                                 </div>
                                 <div class="col-12">
                                     <p class="description">Импорт всех записей из модели</p>
-                                    <p class="code">>>> __modelname__.objects.all()</p>
+                                    <p class="code">>>> <span>modelname</span>.objects.all()</p>
                                 </div>
                                 <div class="col-12">
                                     <p class="description">Импорт одной записи из модели</p>
-                                    <p class="code">>>> __modelname__.objects.get(id = __number__)</p>
+                                    <p class="code">>>> <span>modelname</span>.objects.get(id = <span>number</span>)</p>
                                 </div>
                                 <div class="col-12">
                                     <p class="description">Импорт всех записей по фильтру из модели</p>
-                                    <p class="code">>>> __modelname__.objects.filter(__filter__)</p>
+                                    <p class="code">>>> <span>modelname</span>.objects.filter(<span>filter</span>)</p>
                                 </div>
                                 <div class="col-12 sub">
                                     <p class="description-2">примеры фильтров</p>
-                                    <p class="code">>>> __modelname__.objects.filter(textField__startswith = "t")</p>
-                                    <p class="code">>>> __modelname__.objects.filter(dateTime__year = time)</p>
+                                    <p class="code">>>> <span>modelname</span>.objects.filter(textField__startswith = "t")</p>
+                                    <p class="code">>>> <span>modelname</span>.objects.filter(dateTime__year = time)</p>
                                 </div>
                                 <div class="col-12">
                                     <p class="description">Импорт зависемых от Записи записей через внешний ключ
@@ -164,14 +164,14 @@
                                 </div>
                                 <div class="col-12">
                                     <p class="description">Импорт всех зависемых записей по фильтру из модели</p>
-                                    <p class="code">>>> var.subModelName_set.filter(__filter__)</p>
+                                    <p class="code">>>> var.subModelName_set.filter(<span>filter</span>)</p>
                                 </div>
                                 <div class="col-12" id="c">
                                     <h2>CREATE</h2>
                                 </div>
                                 <div class="col-12">
                                     <p class="description">создание зависимой от Записи записи</p>
-                                    <p class="code">>>> var.subModelName_set.create(__fieldName__ = "text")</p>
+                                    <p class="code">>>> var.subModelName_set.create(<span>fieldName</span> = "text")</p>
                                 </div>
                                 <div class="col-12">
                                     <p class="description">посчитать количество записей</p>
@@ -179,7 +179,7 @@
                                 </div>
                                 <div class="col-12">
                                     <p class="description">создание записи</p>
-                                    <p class="code">>>> var = __modelname__(__fieldName__ = "text")</p>
+                                    <p class="code">>>> var = <span>modelname</span>(<span>fieldName</span> = "text")</p>
                                     <p class="code">>>> var.save()</p>
                                 </div>
                                 <div class="col-12" id="u">
