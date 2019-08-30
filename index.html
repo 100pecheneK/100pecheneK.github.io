@@ -153,6 +153,10 @@
                                     <p class="code">>>> <span>modelname</span>.objects.get(id = <span>number</span>)</p>
                                 </div>
                                 <div class="col-12">
+                                    <p class="description">Импорт 5 последних записей из модели</p>
+                                    <p class="code">>>> <span>modelname</span>.objects.order_by('-<span>field</span>')[:5]</p>
+                                </div>
+                                <div class="col-12">
                                     <p class="description">Импорт всех записей по фильтру из модели</p>
                                     <p class="code">>>> <span>modelname</span>.objects.filter(<span>filter</span>)</p>
                                 </div>
