@@ -90,6 +90,12 @@
                                     <p class="description">Создание приложения</p>
                                     <p class="code">python manage.py startapp <span>appName</span></p>
                                 </div>
+                                <div class="col-12">
+                                    <p class="description">Что бы заработали apps в папке проекта</p>
+                                    <p class="code">PROJECT_ROOT = os.path.dirname(__file__)</p>
+                                    <p class="code">sys.path.insert(0, os.path.join(PROJECT_ROOT, 'apps'))</p>
+                                    
+                                </div>
                             </div>
                             <div class="row chapter">
                                 <div class="col-12" id="ss">
@@ -107,6 +113,9 @@
                                     <p class="description">Запустить сервер на внешнем PORT</p>
                                     <p class="code">python manage.py runserver 80</p>
                                 </div>
+
+                                
+                                
                             </div>
                             <div class="row chapter">
                                 <div class="col-12" id="md">
