@@ -75,7 +75,11 @@ STATICFILES_DIRS = [
     os.path.join(PROJECT_ROOT, 'static_in_dev'),
 ]
 --/
-
+Добавить в urls.py приложения
+/--
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+--/
 Прописать в консоль
 python manage.py collectstatic
 
@@ -104,6 +108,10 @@ python manage.py runserver 80
 Вставить в ALLOWED_HOSTS
 '192.168.0.104',
 '127.0.0.1'
+<hr>
+<h1>Особенности</h1>
+Добавить в форму, что бы форма была защищённой
+{% csrf_token %}
 <hr>
 <h1>Миграции и ДБ</h1>
 
@@ -164,6 +172,16 @@ python manage.py shlell
 
 		удалить запись
 		>>> var.delete()
+		<hr>
+		<hr>
+		Клонируем гит проект
+		Создаём venv на python anywhere
+		mkvirtualenv --python=/usr/bin/python3.7 myenv
+		Качаем Джанго
+		pip install django
+
+		Потом смотрим это видео с 5:16 
+		https://www.youtube.com/watch?v=Y4c4ickks2A
 </pre>
 </body>
 </html>
