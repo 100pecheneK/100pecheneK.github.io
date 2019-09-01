@@ -15,6 +15,32 @@ python manage.py runserver 192.168.0.104
 Запустить сервер на внешнем PORT
 python manage.py runserver 80
 
+Что бы заработали apps в папке проекта
+PROJECT_ROOT = os.path.dirname(__file__)
+sys.path.insert(0, os.path.join(PROJECT_ROOT, 'apps'))
+
+Подключение статики
+Добавить этот код в settings.py
+/---
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media')
+
+STATICFILES_DIRS = [
+    os.path.join(PROJECT_ROOT, 'static_in_dev'),
+]
+--/
+
+Прописать в консоль
+python manage.py collectstatic
+
+Добавить в начало шаблона
+{% load static %}
+
+Прописать путь к статике через
+{% static "путь" %}
 ---------------------------------------
 --------миграции и работа с БД---------
 ---------------------------------------

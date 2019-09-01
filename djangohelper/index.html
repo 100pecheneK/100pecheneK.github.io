@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Django helper</title>
+
+    <link rel="stylesheet" href="css/bootstrap-grid.css">
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+
+    <link rel="icon" sizes="192x192" href="https://static.djangoproject.com/img/icon-touch.e4872c4da341.png">
+</head>
+
+<body>
+    <div class="d-flex" id="wrapper">
+
+
+
+
+        <!-- Sidebar -->
+        <div class=" navbar-expand-lg" id="sidebar-wrapper">
+            <div class="sidebar-heading">DH Navigation</div>
+            <div class="list-group list-group-flush sticky-top">
+                <a href="#start" class="list-group-item list-group-item-action">START</a>
+                <a href="#ss" class="list-group-item list-group-item-action">SERVER START</a>
+                <a href="#md" class="list-group-item list-group-item-action">MIGRATION & DB</a>
+
+                <ul class="menu">
+                    <li> <a href="#shell" class="list-group-item list-group-item-action">SHELL</a>
+                        <ul class="sub-menu">
+                            <a href="#tz" class="list-group-item list-group-item-action">TIMEZONE</a>
+                            <a href="#i" class="list-group-item list-group-item-action">IMPORT</a>
+                            <a href="#c" class="list-group-item list-group-item-action">CREATE</a>
+                            <a href="#u" class="list-group-item list-group-item-action">UPDATE</a>
+                            <a href="#d" class="list-group-item list-group-item-action">DELETE</a>
+                        </ul>
+                    </li>
+                </ul>
+
+                <!-- <ul class="menu">
+                        <li> <a href="#shell" class="list-group-item list-group-item-action">SHELL</a>
+                            <ul class="sub-menu">
+                                <a href="#tz" class="list-group-item list-group-item-action">TIMEZONE</a>
+                            </ul>
+                        </li>
+                    </ul> -->
+            </div>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+
+            <nav class="navbar navbar-expand navbar-light sticky-top">
+                <!-- <a id="menu-toggle"><span class="navbar-toggler-icon"></span></a> -->
+
+                <div class="collapse navbar-collapse d-flex align-items-center" id="navbarSupportedContent">
+                    <h1 id="menu-toggle" class="logo big">Django Helper</h1>
+                    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://docs.djangoproject.com/en/2.2/">Docs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://github.com/100pecheneK/DjangoProjects">GitHub</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="container-fluid ">
+                <div class="container">
+                    <div class="row">
+                        <div class="col content">
+                            <div class="row chapter">
+                                <div class="col-12" id="start">
+                                    <h1>START</h1>
+                                </div>
+                                <div class="col-12">
+                                    <p class="description">Создание проекта</p>
+                                    <p class="code">django-admin startproject <span>projectName</span></p>
+                                </div>
+                                <div class="col-12">
+                                    <p class="description">Создание админа</p>
+                                    <p class="code">python manage.py createsuperuser</p>
+                                </div>
+                                <div class="col-12">
+                                    <p class="description">Создание приложения</p>
+                                    <p class="code">python manage.py startapp <span>appName</span></p>
+                                </div>
+                                <div class="col-12">
+                                    <p class="description">Что бы заработали apps в папке проекта</p>
+                                    <p class="code">PROJECT_ROOT = os.path.dirname(__file__)</p>
+                                    <p class="code">sys.path.insert(0, os.path.join(PROJECT_ROOT, 'apps'))</p>
+                                    
+                                </div>
+								
+								
+
+                                STATIC_URL = '/static/'
+								STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
+								
+								MEDIA_URL = '/media/'
+								MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media')
+								
+								STATICFILES_DIRS = [
+								    os.path.join(PROJECT_ROOT, 'static_in_dev'),
+								]
+                                myfirst>python manage.py collectstatic
+                            </div>
+                            <div class="row chapter">
+                                <div class="col-12" id="ss">
+                                    <h1>SERVER START</h1>
+                                </div>
+                                <div class="col-12">
+                                    <p class="description">Запустить сервер на localhost:8000</p>
+                                    <p class="code">python manage.py runserver</p>
+                                </div>
+                                <div class="col-12">
+                                    <p class="description">Запустить сервер на внешмем IP</p>
+                                    <p class="code">python manage.py runserver 192.168.0.104</p>
+                                </div>
+                                <div class="col-12">
+                                    <p class="description">Запустить сервер на внешнем PORT</p>
+                                    <p class="code">python manage.py runserver 80</p>
+                                </div>
+
+                                
+                                
+                            </div>
+                            <div class="row chapter">
+                                <div class="col-12" id="md">
+                                    <h1 class="">MIGRATION & DB</h1>
+                                </div>
+                                <div class="col-12">
+                                    <p class="description">Создать миграцию (в каталоге с файлом manage.py)</p>
+                                    <p class="code">python manage.py makemigrations <span>appName</span></p>
+                                </div>
+                                <div class="col-12">
+                                    <p class="description">Посмотреть SQL команды миграции</p>
+                                    <p class="code">python manage.py sqlmigrate <span>appName migrationNumber</span></p>
+                                </div>
+                                <div class="col-12">
+                                    <p class="description">Применить миграцию</p>
+                                    <p class="code">python manage.py migrate</p>
+                                </div>
+                            </div>
+                            <div class="row chapter">
+                                <div class="col-12" id="shell">
+                                    <h1>SHELL</h1>
+                                </div>
+                                <div class="col-12" id="tz">
+                                    <h2>Timezone</h2>
+                                    <p class="code">>>> from django.utils import timezone</p>
+                                </div>
+                                <div class="col-12 sub">
+                                    <p class="description">Текущий год</p>
+                                    <p class="code">>>> timezone.now().year</p>
+                                </div>
+                                <div class="col-12" id="i">
+                                    <h2>IMPORT</h2>
+                                </div>
+                                <div class="col-12">
+                                    <p class="description">Импорт моделей приложения</p>
+                                    <p class="code">>>> from <span>appName</span>.models import <span>modelName</span></p>
+                                </div>
+                                <div class="col-12">
+                                    <p class="description">Импорт всех записей из модели</p>
+                                    <p class="code">>>> <span>modelname</span>.objects.all()</p>
+                                </div>
+                                <div class="col-12">
+                                    <p class="description">Импорт одной записи из модели</p>
+                                    <p class="code">>>> <span>modelname</span>.objects.get(id = <span>number</span>)</p>
+                                </div>
+                                <div class="col-12">
+                                    <p class="description">Импорт 5 последних записей из модели</p>
+                                    <p class="code">>>> <span>modelname</span>.objects.order_by('-<span>field</span>')[:5]</p>
+                                </div>
+                                <div class="col-12">
+                                    <p class="description">Импорт всех записей по фильтру из модели</p>
+                                    <p class="code">>>> <span>modelname</span>.objects.filter(<span>filter</span>)</p>
+                                </div>
+                                <div class="col-12 sub">
+                                    <p class="description-2">примеры фильтров</p>
+                                    <p class="code">>>> <span>modelname</span>.objects.filter(textField__startswith = "t")</p>
+                                    <p class="code">>>> <span>modelname</span>.objects.filter(dateTime__year = time)</p>
+                                </div>
+                                <div class="col-12">
+                                    <p class="description">Импорт зависемых от Записи записей через внешний ключ
+                                        ForeignKey</p>
+                                    <p class="code">>>> var.subModelName_set.all()</p>
+                                </div>
+                                <div class="col-12">
+                                    <p class="description">Импорт всех зависемых записей по фильтру из модели</p>
+                                    <p class="code">>>> var.subModelName_set.filter(<span>filter</span>)</p>
+                                </div>
+                                <div class="col-12" id="c">
+                                    <h2>CREATE</h2>
+                                </div>
+                                <div class="col-12">
+                                    <p class="description">создание зависимой от Записи записи</p>
+                                    <p class="code">>>> var.subModelName_set.create(<span>fieldName</span> = "text")</p>
+                                </div>
+                                <div class="col-12">
+                                    <p class="description">посчитать количество записей</p>
+                                    <p class="code">>>> var.subModelName_set.count()</p>
+                                </div>
+                                <div class="col-12">
+                                    <p class="description">создание записи</p>
+                                    <p class="code">>>> var = <span>modelname</span>(<span>fieldName</span> = "text")</p>
+                                    <p class="code">>>> var.save()</p>
+                                </div>
+                                <div class="col-12" id="u">
+                                    <h2>UPDATE</h2>
+                                </div>
+                                <div class="col-12">
+                                    <p class="description">Изменить запись</p>
+                                    <p class="code">>>> var.textField = "newText"</p>
+                                    <p class="code">>>> var.save()</p>
+                                </div>
+                                <div class="col-12" id="d">
+                                    <h2>DELETE</h2>
+                                </div>
+                                <div class="col-12">
+                                    <p class="description">Удалить запись</p>
+                                    <p class="code">>>> var.delete()</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- --------------- -->
+
+
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/jquery.smooth-scroll.js"></script>
+
+    <script>
+        $(function () {
+            $('a[href^="#"]').on('click', function (event) {
+                // отменяем стандартное действие
+                event.preventDefault();
+
+                var sc = $(this).attr("href"),
+                    dn = $(sc).offset().top - 80;
+                $(".active").removeClass("active");
+                $(sc).addClass("active");
+                /*
+                 * sc - в переменную заносим информацию о том, к какому блоку надо перейти
+                 * dn - определяем положение блока на странице
+                 */
+
+                $('html, body').animate({
+                    scrollTop: dn
+                }, 500);
+
+                /*
+                 * 1000 скорость перехода в миллисекундах
+                 */
+            });
+        });
+    </script>
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Menu Toggle Script -->
+    <script>
+        $("#menu-toggle").click(function (e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+    </script>
+    <script>
+        $(function () {
+            $('.menu li').hover(function () {
+                $(this).children('ul').stop(false, true).slideDown(300);
+            }, function () {
+                $(this).children('ul').stop(false, true).slideUp(300);
+            });
+        });
+    </script>
+</body>
+
+</html>
