@@ -1,7 +1,11 @@
-// Check the browser to make sure it supports service workers
-if('serviceWorker' in navigator) {
-  navigator.serviceWorker
-    // Register the path to the service worker file
-    .register('sw.js')
-    .then(function() { console.log("Service Worker Registered"); });
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
 }

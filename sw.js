@@ -1,16 +1,8 @@
-//-----------------------------------------
-// Service Worker
-//
-// * Offline first
-// * Clears old cache on version change
-//
-//-----------------------------------------
-
 // Init cache name/version
-const cacheName = 'v1';
+const CACHE_NAME = 'my-site-cache-v1';
 
 // which pages/assets do you want to cache?
-const cacheAssets = [
+const urlsToCache = [
     'img/',
     'index.html',
     'font/css/all.css',
@@ -19,69 +11,28 @@ const cacheAssets = [
     'css/bootstrap.min.css',
     'css/mdb.min.css',
     'register-worker.js',
-]
-
-// Install service worker
-self.addEventListener('install', (e) => {
-    console.log('Service Worker: Installed');
-    e.waitUntil(
-        caches
-            .open(cacheName)
-            .then(cache => {
-                console.log('Service Worker: Caching Files');
-                cache.addAll(cacheAssets);
+];
+self.addEventListener('install', function (event) {
+    // Perform install steps
+    event.waitUntil(
+        caches.open(CACHE_NAME)
+            .then(function (cache) {
+                console.log('Opened cache');
+                return cache.addAll(urlsToCache);
             })
-            .then(() => self.skipWaiting())
     );
 });
 
-
-// Activate the service worker
-self.addEventListener('activate', (e) => {
-    console.log('Service Worker: Activated');
-
-    // Remove old caches
-    e.waitUntil(
-        caches.keys().then(cacheNames => {
-            return Promise.all(
-                // look at all the cacheNames
-                cacheNames.map(cache => {
-                    // if the current cache !== cacheName then delete it
-                    if (cache !== cacheName) {
-                        console.log('Service Worker: Clearing Old Cache');
-                        return caches.delete(cache);
+self.addEventListener('fetch', function (event) {
+    event.respondWith(
+        caches.match(event.request)
+            .then(function (response) {
+                    // Cache hit - return response
+                    if (response) {
+                        return response;
                     }
-                })
+                    return fetch(event.request);
+                }
             )
-        })
     );
-
-});
-
-
-// listen for fetch event (HTTP request)
-self.addEventListener('fetch', (e) => {
-    console.log('Service Worker: Fetching');
-
-    // Offline backup
-    e.respondWith(
-      // if the user is online, perform a regular HTTP request
-      fetch(e.request)
-      // if the HTTP request fails (offline) then serve the assets requested from the cache
-      .catch(() => caches.match(e.request))
-    )
-
-    // Offline first
-    e.respondWith(
-        // are the files requested in the cache already?
-        caches.match(e.request).then(cachedResponse => {
-            // if yes, then serve files from cache
-            if (cachedResponse) {
-                console.log('Found in cache!');
-                return cachedResponse;
-            }
-            // else do an HTTP request to the server
-            return fetch(e.request);
-        })
-    )
 });
