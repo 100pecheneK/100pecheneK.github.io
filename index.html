@@ -1,187 +1,251 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
+
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-	<style>
-		body{
-			padding: 1em;
-		}
-	</style>
+    <meta charset="utf-8">
+    <title>Material Design Bootstrap</title>
+    <!--    PWA -->
+    <meta name="generator" content="PWA Starter Kit">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no, minimum-scale=1, maximum-scale=1">
+    <meta name="description" content="My App description">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <!--
+        The `<base>` tag below is present to support two advanced deployment options:
+        1) Differential serving. 2) Serving from a non-root path.
+
+        Instead of manually editing the `<base>` tag yourself, you should generally either:
+        a) Add a `basePath` property to the build configuration in your `polymer.json`.
+        b) Use the `--base-path` command-line option for `polymer build`.
+      -->
+    <!--    <base href="/">-->
+
+    <link rel="icon" href="images/favicon.ico">
+
+    <!-- See https://goo.gl/OOhYW5 -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- See https://goo.gl/qRE0vM -->
+    <meta name="theme-color" content="#3f51b5">
+
+    <!-- Add to homescreen for Chrome on Android. Fallback for manifest.json -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="My App">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="My App">
+
+    <!-- Homescreen icons -->
+    <link rel="apple-touch-icon" href="images/manifest/icon-48x48.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/manifest/icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="96x96" href="images/manifest/icon-96x96.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images/manifest/icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="images/manifest/icon-192x192.png">
+
+    <!-- Tile icon for Windows 8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="images/manifest/icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#3f51b5">
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <!-- Default twitter cards -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@username">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="my-app">
+    <meta property="og:image" content="images/manifest/icon-144x144.png"/>
+
+    <!-- Performance tip: hint to the browser to start the handshake for the fonts site -->
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <script>
+        // Load and register pre-caching Service Worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function () {
+                navigator.serviceWorker.register('service-worker.js', {
+                    scope: '/',
+                });
+            });
+        }
+
+        // Redux assumes `process.env.NODE_ENV` exists in the ES module build.
+        // https://github.com/reactjs/redux/issues/2907
+        window.process = {env: {NODE_ENV: 'production'}};
+    </script>
+    <!--    /PWA -->
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="font/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="css/style.css" rel="stylesheet">
 </head>
+
 <body>
-	<pre>
-Создание проекта
-django-admin startproject __projectName__
-<hr>
-Создание приложения
-python manage.py startapp appName
-<hr>
-Создать миграцию
-python manage.py makemigrations __appName__
-<hr>
-<h1>Карта проекта</h1>
-project/
-├── project/
-│	├── apps/
-│ 	│	├── app1
-│ 	│ 	│	├── migrations
-│ 	│ 	│	├── __init__.py
-│ 	│ 	│	├── admin.py
-│ 	│ 	│	├── apps.py
-│ 	│ 	│	├── models.py
-│ 	│ 	│	├── tests.py
-│ 	│ 	│	├── urls.py
-│ 	│	│	└── views.py
-│	├── media/
-│	│	└──
-│	├── static
-│ 	│	├── admin
-│ 	│	├── app1
-│ 	│	├── css
-│ 	│	└── js
-│	├── static_in_dev
-│ 	│	├── app1
-│ 	│	├── css
-│ 	│	└── js
-│	├── templates
-│ 	│	├── app1
-│ 	│	└── base.html
-│	├── __init__.py
-│	├── settings.py
-│	├── urls.py
-│	└── wsgi.py
-├── db.sqlite3
-└── manage.py
 
-<hr>
-<h2>Настройки 1</h2>
-Что бы заработали apps в папке проекта вставить под BASE_DIR
-PROJECT_ROOT = os.path.dirname(__file__)
-sys.path.insert(0, os.path.join(PROJECT_ROOT, 'apps'))
+<!-- Start your project here-->
+<!--Main Navigation-->
+<header>
 
-<hr>
-<h2>Настройки 2</h2>
-Подключение статики
-Добавить этот код в settings.py
-/---
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
+    <nav class="navbar fixed-top navbar-dark elegant-color-dark scrolling-navbar">
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media')
+        <ul class="navbar-nav nav-flex-icons">
+            <!--            TODO Отображать толкьо в диалогах и настройках -->
+            <!--            <li class="nav-item">-->
+            <!--                <a class="nav-link" href="#">-->
+            <!--                    <svg fill="#FFFFFF" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">-->
+            <!--                        <path d="M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z"/>-->
+            <!--                        <path d="M0-.5h24v24H0z" fill="none"/>-->
+            <!--                    </svg>-->
+            <!--                </a>-->
+            <!--            </li>-->
 
-STATICFILES_DIRS = [
-    os.path.join(PROJECT_ROOT, 'static_in_dev'),
-]
---/
-Добавить в urls.py приложения
-/--
-urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
---/
-Прописать в консоль
-python manage.py collectstatic
+            <li class="nav-item d-flex align-items-center">
+                <h1 class="navbar-brand text-center" href="#"><strong>Диалоги</strong></h1>
+            </li>
 
-Добавить в начало шаблона
-{% load static %}
+        </ul>
+        <button class="navbar-toggler toggler-example" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent1"
+                aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"><span
+                class="dark-blue-text"><i
+                class="fas fa-bars fa-1x"></i></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent1">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <select class="mdb-select md-form dropdown-default" searchable="Поиск">
+                        <option value="" disabled selected>Выберите диалог</option>
+                        <option value="1">USA</option>
+                        <option value="2">Germany</option>
+                        <option value="3">France</option>
+                        <option value="3">Poland</option>
+                        <option value="3">Japan</option>
+                        <option value="1">USA</option>
+                        <option value="2">Germany</option>
+                        <option value="3">France</option>
+                        <option value="3">Poland</option>
+                        <option value="3">Japan</option>
+                        <option value="1">USA</option>
+                        <option value="2">Germany</option>
+                        <option value="3">France</option>
+                        <option value="3">Poland</option>
+                        <option value="3">Japan</option>
+                        <option value="1">USA</option>
+                        <option value="2">Germany</option>
+                        <option value="3">France</option>
+                        <option value="3">Poland</option>
+                        <option value="3">Japan</option>
+                        <option value="1">USA</option>
+                        <option value="2">Germany</option>
+                        <option value="3">France</option>
+                        <option value="3">Poland</option>
+                        <option value="3">Japan</option>
+                        <option value="1">USA</option>
+                        <option value="2">Germany</option>
+                        <option value="3">France</option>
+                        <option value="3">Poland</option>
+                        <option value="3">Japan</option>
+                        <option value="1">USA</option>
+                        <option value="2">Germany</option>
+                        <option value="3">France</option>
+                        <option value="3">Poland</option>
+                        <option value="3">Japan</option>
+                        <option value="1">USA</option>
+                        <option value="2">Germany</option>
+                        <option value="3">France</option>
+                        <option value="3">Poland</option>
+                        <option value="3">Japan</option>
+                    </select>
+                </li>
+                <li class="nav-item">
+                    <label class="mdb-main-label">Выберите диалог</label>
+                </li>
+                <li class="nav-item d-flex justify-content-center">
+                    <a href="group_msg.html" class="mdb-main-label btn btn-default">Групповая рассылка</a>
+                </li>
 
-Прописать путь к статике через
-{% static "путь" %}
+            </ul>
 
-<hr>
+        </div>
+    </nav>
 
-Прописать в INSTALLED_APPS в самый верх
-'articles.apps.ArticlesConfig',
-<hr>
-<h1>Запуск сервера</h1>
+</header>
+<!--Main Navigation-->
 
-Запустить сервер на localhost:8000
-python manage.py runserver
+<!--Main Layout-->
+<main class="overflow-auto">
+    <div class="container">
+        <div class="row my-5 py-3 text-white">
 
-Запустить сервер на внешмем IP
-python manage.py runserver 192.168.0.104:80
+            <div class="col-12 p-0 pt-1">
+                <div class="btn-group w-100 dropleft">
+                    <a href="dialog.html" class="btn elegant-color w-100 p-2 d-flex align-items-center">
+                        <img src="img/1111.png" class="user-photo elegant-color-dark rounded float-left"
+                             alt="">
+                        <p class="text-left h4-responsive text-capitalize ml-2">Михаил Притыкин</p>
+                    </a>
+                    <button type="button" class="btn elegant-color dropdown-toggle px-3" data-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false">
+                    </button>
+                    <div class="dropdown-menu danger-color">
+                        <a class="dropdown-item danger-color text-white" href="#">Удалить</a>
+                    </div>
+                </div>
+            </div>
 
-Запустить сервер на внешнем PORT
-python manage.py runserver 80
+        </div>
+    </div>
+</main>
 
-Вставить в ALLOWED_HOSTS
-'192.168.0.104',
-'127.0.0.1'
-<hr>
-<h1>Особенности</h1>
-Добавить в форму, что бы форма была защищённой
-{% csrf_token %}
-<hr>
-<h1>Миграции и ДБ</h1>
+<!--Main Layout-->
+<!-- Footer -->
+<footer class="page-footer font-small elegant-color-dark fixed-bottom">
+    <!-- Copyright -->
+    <div class="footer-copyright d-flex justify-content-between py-3">
+        <div class="container">
+            <div class="row text-center">
+                <a href="contacts.html" class="col h4 mb-0">
+                    <i class="fas fa-address-book"></i>
+                </a>
+                <a href="index.html" class="col h4 mb-0">
+                    <!-- default-color -->
+                    <i class="fas fa-comments active-menu"></i>
+                </a>
+                <a href="settings.html" class="col h4 mb-0">
+                    <i class="fas fa-user-cog"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright -->
 
-создать миграцию (в каталоге с файлом manage.py)
-python manage.py makemigrations __appName__
-
-посмотреть SQL команды миграции
-python manage.py sqlmigrate __appName__ __migrationNumber__
-
-применить миграцию
-python manage.py migrate
-
-запустить shell для управление БД через ОРМ
-python manage.py shlell
-
-	модуль для работы с временными зонами
-	>>> from django.utils import timezone
-
-		текущий год
-		>>> timezone.now().year
-	
-	импорт моделей приложения
-	>>> from __appName__.models import __modelName__
-	
-		импорт всех записей из модели
-		>>> __modelname__.objects.all()
-		
-		импорт одной записи из модели
-		>>> __modelname__.objects.get(id = __number__)
-
-		импорт всех записей по фильтру из модели
-		>>> __modelname__.objects.filter(__filter__)
-			примеры фильтров
-			>>> __modelname__.objects.filter(textField__startswith = "t")
-			>>> __modelname__.objects.filter(dateTime__year = time)
-		
-		импорт зависемых от Записи записей через внешний ключ ForeignKey
-		>>> var.subModelName_set.all()
-
-			импорт всех зависемых записей по фильтру из модели
-			>>> var.subModelName_set.filter(__filter__)
-
-			создание зависимой от Записи записи
-			>>> var.subModelName_set.create(__fieldName__ = "text")
-			
-			посчитать количество записей
-			>>> var.subModelName_set.count()
-
-
-
-		создание записи
-		>>> var = __modelname__(__fieldName__ = "text", pub_date = 	timezpne.now())
-		>>> var.save()
-		
-		изменить запись
-		>>> var.textField = "newText"
-		>>> var.save()
-
-		удалить запись
-		>>> var.delete()
-		<hr>
-		<hr>
-		Клонируем гит проект
-		Создаём venv на python anywhere
-		mkvirtualenv --python=/usr/bin/python3.7 myenv
-		Качаем Джанго
-		pip install django
-
-		Потом смотрим это видео с 5:16 
-		https://www.youtube.com/watch?v=Y4c4ickks2A
-</pre>
+</footer>
+<!-- Footer -->
+<!-- /Start your project here-->
+<!--PWA-->
+<!-- Load webcomponents-loader.js to check and load any polyfills your browser needs -->
+<script src="node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+<!-- Built with love using PWA Starter Kit -->
+<script type="module" src="my-app.js"></script>
+<!--/PWA-->
+<!-- SCRIPTS -->
+<!-- JQuery -->
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="js/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="js/mdb.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.mdb-select').materialSelect();
+    });
+</script>
 </body>
+
 </html>

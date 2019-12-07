@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <title>Material Design Bootstrap</title>
+    <!--    PWA -->
+    <meta name="generator" content="PWA Starter Kit">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no, minimum-scale=1, maximum-scale=1">
+    <meta name="description" content="My App description">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <!--
+        The `<base>` tag below is present to support two advanced deployment options:
+        1) Differential serving. 2) Serving from a non-root path.
+
+        Instead of manually editing the `<base>` tag yourself, you should generally either:
+        a) Add a `basePath` property to the build configuration in your `polymer.json`.
+        b) Use the `--base-path` command-line option for `polymer build`.
+      -->
+    <!--    <base href="/">-->
+
+    <link rel="icon" href="images/favicon.ico">
+
+    <!-- See https://goo.gl/OOhYW5 -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- See https://goo.gl/qRE0vM -->
+    <meta name="theme-color" content="#212121">
+
+    <!-- Add to homescreen for Chrome on Android. Fallback for manifest.json -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="My App">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="My App">
+
+    <!-- Homescreen icons -->
+    <link rel="apple-touch-icon" href="images/manifest/icon-48x48.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/manifest/icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="96x96" href="images/manifest/icon-96x96.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images/manifest/icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="images/manifest/icon-192x192.png">
+
+    <!-- Tile icon for Windows 8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="images/manifest/icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#3f51b5">
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <!-- Default twitter cards -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@username">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="my-app">
+    <meta property="og:image" content="images/manifest/icon-144x144.png"/>
+
+    <!-- Performance tip: hint to the browser to start the handshake for the fonts site -->
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <script>
+        // Load and register pre-caching Service Worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function () {
+                navigator.serviceWorker.register('service-worker.js', {
+                    scope: '/',
+                });
+            });
+        }
+
+        // Redux assumes `process.env.NODE_ENV` exists in the ES module build.
+        // https://github.com/reactjs/redux/issues/2907
+        window.process = {env: {NODE_ENV: 'production'}};
+    </script>
+    <!--    /PWA -->
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="font/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body id="body">
+<!-- ppreloader -->
+<div id="mdb-preloader" class="flex-center">
+    <div class="preloader-wrapper active">
+        <div class="spinner-layer spinner-blue-only">
+            <div class="circle-clipper left">
+                <div class="circle"></div>
+            </div>
+            <div class="gap-patch">
+                <div class="circle"></div>
+            </div>
+            <div class="circle-clipper right">
+                <div class="circle"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Start your project here-->
+<!--Main Navigation-->
+<header>
+
+    <nav class="navbar fixed-top navbar-dark elegant-color-dark scrolling-navbar">
+
+        <ul class="navbar-nav nav-flex-icons">
+            <!--            TODO Отображать толкьо в диалогах и настройках -->
+            <li class="nav-item">
+                <a class="nav-link p-0" href="index.html">
+                    <svg fill="#FFFFFF" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z"/>
+                        <path d="M0-.5h24v24H0z" fill="none"/>
+                    </svg>
+                </a>
+            </li>
+
+            <li class="nav-item d-flex align-items-center">
+                <h1 class="navbar-brand text-center" href="#"><strong>Михаил Притыкин</strong></h1>
+            </li>
+
+        </ul>
+
+    </nav>
+
+</header>
+<!--Main Navigation-->
+
+<!--Main Layout-->
+<main class="overflow-auto">
+    <div class="container">
+        <div class="row my-5 py-3 text-white">
+            <div class="col-12 px-3 pt-1">
+                <div class="row">
+                    <div class="col-12 question justify-content-start mt-3">
+                        <div class="row">
+                            <div class="col-8">
+                                <div class="bubble bubble-question z-depth-1">
+                                    <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<em
+                                            class="text-light d-block message-time message-time-start">12:30</em></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 answer justify-content-end mt-3">
+                        <div class="row justify-content-end">
+                            <div class="col-8 d-flex justify-content-end">
+                                <div class="bubble bubble-answer z-depth-1">
+                                    <span>Привет!<em class="text-light d-block message-time message-time-end">12:30</em></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 question justify-content-start mt-3">
+                        <div class="row">
+                            <div class="col-8">
+                                <div class="bubble bubble-question z-depth-1">
+                                    <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<em
+                                            class="text-light d-block message-time message-time-start">12:30</em></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 answer justify-content-end mt-3">
+                        <div class="row justify-content-end">
+                            <div class="col-8 d-flex justify-content-end">
+                                <div class="bubble bubble-answer z-depth-1">
+                                    <span>Привет!<em class="text-light d-block message-time message-time-end">12:30</em></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 question justify-content-start mt-3">
+                        <div class="row">
+                            <div class="col-8">
+                                <div class="bubble bubble-question z-depth-1">
+                                    <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<em
+                                            class="text-light d-block message-time message-time-start">12:30</em></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 answer justify-content-end mt-3">
+                        <div class="row justify-content-end">
+                            <div class="col-8 d-flex justify-content-end">
+                                <div class="bubble bubble-answer z-depth-1">
+                                    <span>Привет!<em class="text-light d-block message-time message-time-end">12:30</em></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 question justify-content-start mt-3">
+                        <div class="row">
+                            <div class="col-8">
+                                <div class="bubble bubble-question z-depth-1">
+                                    <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<em
+                                            class="text-light d-block message-time message-time-start">12:30</em></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 answer justify-content-end mt-3">
+                        <div class="row justify-content-end">
+                            <div class="col-8 d-flex justify-content-end">
+                                <div class="bubble bubble-answer z-depth-1">
+                                    <span>Привет!<em class="text-light d-block message-time message-time-end">12:30</em></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 question justify-content-start mt-3">
+                        <div class="row">
+                            <div class="col-8">
+                                <div class="bubble bubble-question z-depth-1">
+                                    <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<em
+                                            class="text-light d-block message-time message-time-start">12:30</em></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 answer justify-content-end mt-3">
+                        <div class="row justify-content-end">
+                            <div class="col-8 d-flex justify-content-end">
+                                <div class="bubble bubble-answer z-depth-1">
+                                    <span>Привет!<em class="text-light d-block message-time message-time-end">12:30</em></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 mt-3">
+                        <em class="text-light d-block message-time-day">4 декабря</em>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 question justify-content-start mt-3">
+                        <div class="row">
+                            <div class="col-8">
+                                <div class="bubble bubble-question z-depth-1">
+                                    <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<em
+                                            class="text-light d-block message-time message-time-start">12:30</em></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 answer justify-content-end mt-3">
+                        <div class="row justify-content-end">
+                            <div class="col-8 d-flex justify-content-end">
+                                <div class="bubble bubble-answer z-depth-1">
+                                    <span>Привет!<em class="text-light d-block message-time message-time-end">12:30</em></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+</main>
+
+<!--Main Layout-->
+<!-- Footer -->
+<footer class="page-footer font-small elegant-color-dark fixed-bottom">
+    <!-- Copyright -->
+    <div class="footer-copyright d-flex justify-content-between p-0">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col p-0">
+                    <div class="input-group pl-0">
+                        <input class="form-control border-white" type="text" placeholder="Введите сообщение..."
+                               aria-label="send-msg">
+                        <div class="input-group-append">
+                            <button class="input-group-text elegant-color-dark lighten-1"
+                                    id="basic-text1">
+                                <i class="fas fa-paper-plane text-white"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+<!-- /Start your project here-->
+<!--PWA-->
+<!-- Load webcomponents-loader.js to check and load any polyfills your browser needs -->
+<script src="node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+<!-- Built with love using PWA Starter Kit -->
+<script type="module" src="my-app.js"></script>
+<!--/PWA-->
+<!-- SCRIPTS -->
+<!-- JQuery -->
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="js/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="js/mdb.min.js"></script>
+<script>
+    function scrollBot() {
+        document.body.scrollTop = document.body.scrollHeight - document.body.clientHeight;
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    // TODO Поменять HTML код
+    function createDivMessageQuestion(content) {
+        var div = document.createElement('div');
+        div.className = "row";
+        div.innerHTML = '<div class="col-12 question justify-content-start mt-3"><div class="row"><div class="col-8"><div class="bubble bubble-question"><span>' + content + '</span></div></div></div></div>';
+        return div;
+    }
+
+    // TODO Поменять HTML код
+    function createDivMessageAnswer(content) {
+        var div = document.createElement('div');
+        div.className = "row";
+        div.innerHTML = '<div class="col-12 answer justify-content-end mt-3"><div class="row justify-content-end"><div class="col-8 d-flex justify-content-end"><div class="bubble bubble-answer"><span>' + content + '</span></div></div></div></div>';
+        return div;
+    }
+
+    // window.scrollTo(0, document.body.scrollHeight);
+
+
+    $(window).on('load', function () {
+        $('#mdb-preloader').addClass('loaded');
+        window.setTimeout(function () {
+            $('#mdb-preloader').remove();
+            scrollBot();
+        }, 1200);
+    });
+</script>
+</body>
+
+</html>
