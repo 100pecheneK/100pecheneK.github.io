@@ -11,6 +11,7 @@ const cacheName = 'v1';
 
 // which pages/assets do you want to cache?
 const cacheAssets = [
+    'img/',
     'index.html',
     'font/css/all.css',
     'font/webfonts/all.css',
