@@ -12,8 +12,10 @@ const cacheName = 'v1';
 // which pages/assets do you want to cache?
 const cacheAssets = [
     'index.html',
+    'font/css/all.css',
+    'font/webfonts/all.css',
     'css/style.css',
-    'bootstrap.min.css',
+    'css/bootstrap.min.css',
     'css/mdb.min.css',
     'register-worker.js',
 ]
