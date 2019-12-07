@@ -64,12 +64,12 @@ self.addEventListener('fetch', (e) => {
     console.log('Service Worker: Fetching');
 
     // Offline backup
-    // e.respondWith(
-    //   // if the user is online, perform a regular HTTP request
-    //   fetch(e.request)
-    //   // if the HTTP request fails (offline) then serve the assets requested from the cache
-    //   .catch(() => caches.match(e.request))
-    // )
+    e.respondWith(
+      // if the user is online, perform a regular HTTP request
+      fetch(e.request)
+      // if the HTTP request fails (offline) then serve the assets requested from the cache
+      .catch(() => caches.match(e.request))
+    )
 
     // Offline first
     e.respondWith(
