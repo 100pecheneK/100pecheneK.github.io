@@ -3,7 +3,7 @@ const CACHE_NAME = 'my-site-cache-v1';
 
 // which pages/assets do you want to cache?
 const urlsToCache = [
-    'img/',
+    // 'img/',
     'index.html',
     'font/css/all.css',
     'font/webfonts/all.css',
