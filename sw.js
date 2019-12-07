@@ -1,8 +1,8 @@
 // Init cache name/version
-const CACHE_NAME = 'my-site-cache-v1';
+const cacheName = 'my-site-cache-v1';
 
 // which pages/assets do you want to cache?
-const urlsToCache = [
+const cacheFiles = [
     './',
     'index.html',
     'font/css/all.css',
