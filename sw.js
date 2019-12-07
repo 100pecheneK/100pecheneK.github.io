@@ -8,8 +8,8 @@ const urlsToCache = [
     'font/css/all.css',
     'font/webfonts/all.css',
     'css/style.css',
-    'css/bootstrap.min.css',
-    'css/mdb.min.css',
+    // 'css/bootstrap.min.css',
+    // 'css/mdb.min.css',
     'register-worker.js',
 ];
 self.addEventListener('install', function (event) {
